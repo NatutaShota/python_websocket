@@ -1,0 +1,16 @@
+<h1>WebSockets Test</h1>
+ 
+<script>
+  var ws;
+  // ws = new WebSocket("ws://54.65.113.57:8080/websocket");
+  ws = new WebSocket("ws://localhost:8080/ws");
+  ws.onmessage = function(ev) {
+  	var div_element = document.createElement("li");
+    div_element.innerHTML = ev.data;
+  	var parent_object = document.getElementById("list");
+    parent_object.appendChild(div_element);
+  }
+</script>
+ 
+ 
+<ul id="list"></ul>
